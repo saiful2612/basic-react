@@ -22,8 +22,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>I am a react developer</p>
-
         {
           products.map(product => <Product product={product}></Product>)
         }
@@ -32,11 +30,22 @@ function App() {
         <Crickter name="Akram Khan" job="batsman"></Crickter>
         <Crickter name="Pailot" job="Wicket Keeper"></Crickter>
         <Crickter name="Rafique" job="Bowler" ></Crickter>
+
+        <MovieCount></MovieCount>
       </header>
     </div>
   );
 }
-
+function MovieCount(){
+  const [count, setCount]= useState(0)
+  const handleClick= () => setCount(count+1);
+  return(
+    <div>
+      <button onClick={handleClick}>Add movies</button>
+      <h3>Number of Movies- {count}</h3>
+    </div>
+  )
+}
 function Counter(){
   const[count,setCount]=useState(10);
   const handleDecrease= () => setCount(count -1);
